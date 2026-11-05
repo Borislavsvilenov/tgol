@@ -89,7 +89,7 @@ int main(int argc, char* argv[]) {
   enableRawMode();
 
   int running = 1;
-  int paused = 1;
+  int paused = 0;
 
   int key;
 
