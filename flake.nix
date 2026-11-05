@@ -10,19 +10,19 @@
 
   outputs = { self, nixpkgs, flake-utils, TUILIB }: {
     overlays.default = final: prev: {
-      res = final.callPackage ({stdenv, ...}:
+      res = final.callPackage ({stdenv, tuilib, ...}:
         stdenv.mkDerivation {
           src = ./.;
           pname = "tgol";
           version = "0.1.0";
           nativeBuildInputs = [ stdenv.cc ];
 
-          buildInputs = [ TUILIB.default ];
+          buildInputs = [ tuilib ];
           
           buildPhase = ''
             runHook preBuild
 
-            $CC -g src/*.c -Iinclude -o tgol
+            $CC -g main.c src/*.c -Iinclude -L. -ltuilib -o tgol
 
             runHook postBuild
           '';
@@ -36,7 +36,7 @@
             runHook postInstall      
           '';
         }
-      ) {};
+      ) { tuilib = TUILIB.packages.${final.stdenv.hostPlatform.system}.TUILIB; };
     };
   } // 
   (flake-utils.lib.eachDefaultSystem (system:
@@ -49,14 +49,14 @@
     in
       {
         packages = {
-          tgol = pkgs.tgol;
+          tgol = pkgs.res;
           default = self.packages.${system}.tgol;
         };
 
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [  ];
+          buildInputs = with pkgs; [ TUILIB.packages.${system}.TUILIB ];
           shellHook = ''
-            alias comp="cc main.c -Iinclude -L. -ltuilib -o test"
+            alias comp="cc -g main.c -Iinclude -L. -ltuilib -o test"
             alias run="./test"
           '';
         };
