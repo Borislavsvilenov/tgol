@@ -93,7 +93,7 @@ int main(int argc, char* argv[]) {
 
   int key;
 
-  Vec2i gameSize = {WIDTH * 2, HEIGHT * 4};
+  Vec2i gameSize = {(WIDTH+2) * 2, (HEIGHT+2) * 4};
   Vec2i xoffset = {1, 0};
   Vec2i yoffset = {0, 1};
   Vec2i xyoffset = {1, 1};
@@ -101,7 +101,7 @@ int main(int argc, char* argv[]) {
   BrailMatrix* game = initBrailMatrix(gameSize);
   BrailMatrix* aux = initBrailMatrix(gameSize);
 
-  size_t dataSize = WIDTH * HEIGHT;
+  size_t dataSize = (WIDTH+2) * (HEIGHT+2);
 
   if (argc > 1) {
     int preset = atoi(argv[1]);
@@ -137,8 +137,7 @@ start:
       goto start;
     }
 
-
-    drawBrail(game, (Vec2i){0, 0}, (Color){245, 169, 127, 30, 32, 48});
+    drawBrail(game, (Vec2i){-1, -1}, (Color){245, 169, 127, 30, 32, 48});
 
     for (size_t i = 0; i < gameSize.x; i++) {
       for (size_t j = 0; j < gameSize.y; j++) {
