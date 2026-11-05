@@ -3,142 +3,85 @@
 #include <unistd.h>
 
 void initPentadecathlon(Vec2i gameSize, BrailMatrix* game) {
-    int cx = gameSize.x / 2;
-    int cy = gameSize.y / 2;
+  int cx = gameSize.x / 2;
+  int cy = gameSize.y / 2;
 
-    setBit(game, (Vec2i){cx - 5, cy + 0}, 1);
-    setBit(game, (Vec2i){cx - 4, cy + 0}, 1);
-    setBit(game, (Vec2i){cx - 3, cy - 1}, 1);
-    setBit(game, (Vec2i){cx - 3, cy + 1}, 1);
-    setBit(game, (Vec2i){cx - 2, cy + 0}, 1);
-    setBit(game, (Vec2i){cx - 1, cy + 0}, 1);
-    setBit(game, (Vec2i){cx + 0, cy + 0}, 1);
-    setBit(game, (Vec2i){cx + 1, cy + 0}, 1);
-    setBit(game, (Vec2i){cx + 2, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 2, cy + 1}, 1);
-    setBit(game, (Vec2i){cx + 3, cy + 0}, 1);
-    setBit(game, (Vec2i){cx + 4, cy + 0}, 1);
+  setBit(game, (Vec2i){cx - 5, cy + 0}, 1);
+  setBit(game, (Vec2i){cx - 4, cy + 0}, 1);
+  setBit(game, (Vec2i){cx - 3, cy - 1}, 1);
+  setBit(game, (Vec2i){cx - 3, cy + 1}, 1);
+  setBit(game, (Vec2i){cx - 2, cy + 0}, 1);
+  setBit(game, (Vec2i){cx - 1, cy + 0}, 1);
+  setBit(game, (Vec2i){cx + 0, cy + 0}, 1);
+  setBit(game, (Vec2i){cx + 1, cy + 0}, 1);
+  setBit(game, (Vec2i){cx + 2, cy - 1}, 1);
+  setBit(game, (Vec2i){cx + 2, cy + 1}, 1);
+  setBit(game, (Vec2i){cx + 3, cy + 0}, 1);
+  setBit(game, (Vec2i){cx + 4, cy + 0}, 1);
 }
 
-void initLWSS(Vec2i gameSize, BrailMatrix* game) {
-    int cx = gameSize.x / 2;
-    int cy = gameSize.y / 2;
+void initKoksGalaxy(Vec2i gameSize, BrailMatrix* game) {
+  int cx = gameSize.x / 2;
+  int cy = gameSize.y / 2;
 
-    setBit(game, (Vec2i){cx - 2, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 1, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 2, cy + 0}, 1);
-    setBit(game, (Vec2i){cx - 2, cy + 1}, 1);
-    setBit(game, (Vec2i){cx + 1, cy + 1}, 1);
-    setBit(game, (Vec2i){cx + 2, cy + 1}, 1);
-    setBit(game, (Vec2i){cx - 1, cy + 2}, 1);
-    setBit(game, (Vec2i){cx + 0, cy + 2}, 1);
-    setBit(game, (Vec2i){cx + 1, cy + 2}, 1);
-    setBit(game, (Vec2i){cx + 2, cy + 2}, 1);
-}
+  setBit(game, (Vec2i){cx+4, cy+4}, 1);
+  setBit(game, (Vec2i){cx+3, cy+4}, 1);
+  setBit(game, (Vec2i){cx+2, cy+4}, 1);
+  setBit(game, (Vec2i){cx+1, cy+4}, 1);
+  setBit(game, (Vec2i){cx, cy+4}, 1);
+  setBit(game, (Vec2i){cx-1, cy+4}, 1);
 
-void initTumbler(Vec2i gameSize, BrailMatrix* game) {
-    int cx = gameSize.x / 2;
-    int cy = gameSize.y / 2;
+  setBit(game, (Vec2i){cx+4, cy+3}, 1);
+  setBit(game, (Vec2i){cx+3, cy+3}, 1);
+  setBit(game, (Vec2i){cx+2, cy+3}, 1);
+  setBit(game, (Vec2i){cx+1, cy+3}, 1);
+  setBit(game, (Vec2i){cx, cy+3}, 1);
+  setBit(game, (Vec2i){cx-1, cy+3}, 1);
 
-    setBit(game, (Vec2i){cx - 3, cy - 2}, 1);
-    setBit(game, (Vec2i){cx - 3, cy - 1}, 1);
-    setBit(game, (Vec2i){cx - 3, cy + 0}, 1);
-    setBit(game, (Vec2i){cx - 3, cy + 1}, 1);
-    setBit(game, (Vec2i){cx - 2, cy - 2}, 1);
-    setBit(game, (Vec2i){cx - 2, cy + 1}, 1);
-    setBit(game, (Vec2i){cx - 1, cy - 1}, 1);
-    setBit(game, (Vec2i){cx - 1, cy + 0}, 1);
 
-    setBit(game, (Vec2i){cx + 1, cy + 0}, 1);
-    setBit(game, (Vec2i){cx + 1, cy + 1}, 1);
-    setBit(game, (Vec2i){cx + 2, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 2, cy + 2}, 1);
-    setBit(game, (Vec2i){cx + 3, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 3, cy + 0}, 1);
-    setBit(game, (Vec2i){cx + 3, cy + 1}, 1);
-    setBit(game, (Vec2i){cx + 3, cy + 2}, 1);
-}
+  setBit(game, (Vec2i){cx-4, cy-4}, 1);
+  setBit(game, (Vec2i){cx-3, cy-4}, 1);
+  setBit(game, (Vec2i){cx-2, cy-4}, 1);
+  setBit(game, (Vec2i){cx-1, cy-4}, 1);
+  setBit(game, (Vec2i){cx, cy-4}, 1);
+  setBit(game, (Vec2i){cx+1, cy-4}, 1);
 
-void initRPentomino(Vec2i gameSize, BrailMatrix* game) {
-    int cx = gameSize.x / 2;
-    int cy = gameSize.y / 2;
+  setBit(game, (Vec2i){cx-4, cy-3}, 1);
+  setBit(game, (Vec2i){cx-3, cy-3}, 1);
+  setBit(game, (Vec2i){cx-2, cy-3}, 1);
+  setBit(game, (Vec2i){cx-1, cy-3}, 1);
+  setBit(game, (Vec2i){cx, cy-3}, 1);
+  setBit(game, (Vec2i){cx+1, cy-3}, 1);
 
-    setBit(game, (Vec2i){cx + 0, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 1, cy - 1}, 1);
-    setBit(game, (Vec2i){cx - 1, cy + 0}, 1);
-    setBit(game, (Vec2i){cx + 0, cy + 0}, 1);
-    setBit(game, (Vec2i){cx + 0, cy + 1}, 1);
-}
 
-void initPulsar(Vec2i gameSize, BrailMatrix* game) {
-    int cx = gameSize.x / 2;
-    int cy = gameSize.y / 2;
+  setBit(game, (Vec2i){cx+4, cy-4}, 1);
+  setBit(game, (Vec2i){cx+4, cy-3}, 1);
+  setBit(game, (Vec2i){cx+4, cy-2}, 1);
+  setBit(game, (Vec2i){cx+4, cy-1}, 1);
+  setBit(game, (Vec2i){cx+4, cy}, 1);
+  setBit(game, (Vec2i){cx+4, cy+1}, 1);
 
-    setBit(game, (Vec2i){cx - 6, cy - 4}, 1);
-    setBit(game, (Vec2i){cx - 5, cy - 4}, 1);
-    setBit(game, (Vec2i){cx - 4, cy - 4}, 1);
-    setBit(game, (Vec2i){cx - 6, cy - 1}, 1);
-    setBit(game, (Vec2i){cx - 5, cy - 1}, 1);
-    setBit(game, (Vec2i){cx - 4, cy - 1}, 1);
-    setBit(game, (Vec2i){cx - 1, cy - 6}, 1);
-    setBit(game, (Vec2i){cx - 1, cy - 5}, 1);
-    setBit(game, (Vec2i){cx - 1, cy - 4}, 1);
-    setBit(game, (Vec2i){cx - 4, cy - 2}, 1);
-    setBit(game, (Vec2i){cx - 2, cy - 4}, 1);
-    setBit(game, (Vec2i){cx - 2, cy - 2}, 1);
+  setBit(game, (Vec2i){cx+3, cy-4}, 1);
+  setBit(game, (Vec2i){cx+3, cy-3}, 1);
+  setBit(game, (Vec2i){cx+3, cy-2}, 1);
+  setBit(game, (Vec2i){cx+3, cy-1}, 1);
+  setBit(game, (Vec2i){cx+3, cy}, 1);
+  setBit(game, (Vec2i){cx+3, cy+1}, 1);
 
-    setBit(game, (Vec2i){cx + 4, cy - 4}, 1);
-    setBit(game, (Vec2i){cx + 5, cy - 4}, 1);
-    setBit(game, (Vec2i){cx + 6, cy - 4}, 1);
-    setBit(game, (Vec2i){cx + 4, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 5, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 6, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 1, cy - 6}, 1);
-    setBit(game, (Vec2i){cx + 1, cy - 5}, 1);
-    setBit(game, (Vec2i){cx + 1, cy - 4}, 1);
-    setBit(game, (Vec2i){cx + 4, cy - 2}, 1);
-    setBit(game, (Vec2i){cx + 2, cy - 4}, 1);
-    setBit(game, (Vec2i){cx + 2, cy - 2}, 1);
 
-    setBit(game, (Vec2i){cx - 6, cy + 1}, 1);
-    setBit(game, (Vec2i){cx - 5, cy + 1}, 1);
-    setBit(game, (Vec2i){cx - 4, cy + 1}, 1);
-    setBit(game, (Vec2i){cx - 6, cy + 4}, 1);
-    setBit(game, (Vec2i){cx - 5, cy + 4}, 1);
-    setBit(game, (Vec2i){cx - 4, cy + 4}, 1);
-    setBit(game, (Vec2i){cx - 1, cy + 6}, 1);
-    setBit(game, (Vec2i){cx - 1, cy + 5}, 1);
-    setBit(game, (Vec2i){cx - 1, cy + 4}, 1);
-    setBit(game, (Vec2i){cx - 4, cy + 2}, 1);
-    setBit(game, (Vec2i){cx - 2, cy + 4}, 1);
-    setBit(game, (Vec2i){cx - 2, cy + 2}, 1);
+  setBit(game, (Vec2i){cx-4, cy+4}, 1);
+  setBit(game, (Vec2i){cx-4, cy+3}, 1);
+  setBit(game, (Vec2i){cx-4, cy+2}, 1);
+  setBit(game, (Vec2i){cx-4, cy+1}, 1);
+  setBit(game, (Vec2i){cx-4, cy}, 1);
+  setBit(game, (Vec2i){cx-4, cy-1}, 1);
 
-    setBit(game, (Vec2i){cx + 4, cy + 1}, 1);
-    setBit(game, (Vec2i){cx + 5, cy + 1}, 1);
-    setBit(game, (Vec2i){cx + 6, cy + 1}, 1);
-    setBit(game, (Vec2i){cx + 4, cy + 4}, 1);
-    setBit(game, (Vec2i){cx + 5, cy + 4}, 1);
-    setBit(game, (Vec2i){cx + 6, cy + 4}, 1);
-    setBit(game, (Vec2i){cx + 1, cy + 6}, 1);
-    setBit(game, (Vec2i){cx + 1, cy + 5}, 1);
-    setBit(game, (Vec2i){cx + 1, cy + 4}, 1);
-    setBit(game, (Vec2i){cx + 4, cy + 2}, 1);
-    setBit(game, (Vec2i){cx + 2, cy + 4}, 1);
-    setBit(game, (Vec2i){cx + 2, cy + 4}, 1);
-    setBit(game, (Vec2i){cx + 2, cy + 2}, 1);
-}
-
-void initAcorn(Vec2i gameSize, BrailMatrix* game) {
-    int cx = gameSize.x / 2;
-    int cy = gameSize.y / 2;
-
-    setBit(game, (Vec2i){cx - 3, cy - 1}, 1);
-    setBit(game, (Vec2i){cx - 2, cy - 1}, 1);
-    setBit(game, (Vec2i){cx - 2, cy + 1}, 1);
-    setBit(game, (Vec2i){cx + 1, cy + 0}, 1);
-    setBit(game, (Vec2i){cx + 2, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 3, cy - 1}, 1);
-    setBit(game, (Vec2i){cx + 4, cy - 1}, 1);
+  setBit(game, (Vec2i){cx-3, cy+4}, 1);
+  setBit(game, (Vec2i){cx-3, cy+3}, 1);
+  setBit(game, (Vec2i){cx-3, cy+2}, 1);
+  setBit(game, (Vec2i){cx-3, cy+1}, 1);
+  setBit(game, (Vec2i){cx-3, cy}, 1);
+  setBit(game, (Vec2i){cx-3, cy-1}, 1);
 }
 
 int main(int argc, char* argv[]) {
@@ -146,6 +89,10 @@ int main(int argc, char* argv[]) {
   enableRawMode();
 
   int running = 1;
+  int paused = 1;
+
+  int key;
+
   Vec2i gameSize = {WIDTH * 2, HEIGHT * 4};
   Vec2i xoffset = {1, 0};
   Vec2i yoffset = {0, 1};
@@ -163,37 +110,36 @@ int main(int argc, char* argv[]) {
         initPentadecathlon(gameSize, game);
         break;
       case 2:
-        initLWSS(gameSize, game);
-        break;
-      case 3:
-        initTumbler(gameSize, game);
-        break;
-      case 4:
-        initRPentomino(gameSize, game);
-        break;
-      case 5:
-        initPulsar(gameSize, game);
-        break;
-      case 6:
-        initAcorn(gameSize, game);
+        initKoksGalaxy(gameSize, game);
         break;
     }
   } else {
-    initPentadecathlon(gameSize, game);
+    initKoksGalaxy(gameSize, game);
   }
 
   while (running) {
-    
-    int key = readKey();
+
+start:
+
+    key = readKey();
 
     switch (key) {
       case KEY_ESC:
         running = false;
         break;
+
+      case ' ':
+        paused = !paused;
+        break;
     }
 
-    drawBrail(game, (Vec2i){0, 0}, (Color){160, 140, 10, 10, 10, 20});
-    
+    if(paused){
+      goto start;
+    }
+
+
+    drawBrail(game, (Vec2i){0, 0}, (Color){245, 169, 127, 30, 32, 48});
+
     for (size_t i = 0; i < gameSize.x; i++) {
       for (size_t j = 0; j < gameSize.y; j++) {
         Vec2i pos = {i, j};
